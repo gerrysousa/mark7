@@ -1,5 +1,5 @@
 Dado("que eu acessei o formulário de login") do
-  @home.acessar
+  @login_page.acessar
 end
   
   Quando("faço login com {string} e {string}") do |string, string2|
@@ -7,7 +7,7 @@ end
     puts string2
     # Quando('faço login com:') do |table|
       # @usuario = table.rows_hash
-      @login.faz_login(string, string2)
+      @login_page.faz_login(string, string2)
     # end
   end
   
@@ -21,7 +21,7 @@ end
   
   Então("devo ver a mensagem de alerta {string}") do |string|
     #Então("devo ver a seguinte mensagem de {string}") do |mensagem_alerta|
-      expect(@login.msg_alerta).to eql mensagem_alerta
+      expect(@login_page.msg_alerta).to eql mensagem_alerta
     #end
   end
 

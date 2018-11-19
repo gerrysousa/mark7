@@ -12,5 +12,9 @@ class LoginPage
         return find('.alert').text
       end
     end
+
+    def acessar
+        visit '/'
+      end
   end
   
