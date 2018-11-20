@@ -9,7 +9,7 @@ Funcionalidade: Login
     Contexto: Formulário
         Dado que eu acessei o formulário de login
     
-    @smoke
+    @smoke1
     Cenario: Login do usuário
 
         Quando faço login com "eu@papito.io" e "123456"

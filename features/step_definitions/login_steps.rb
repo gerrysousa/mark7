@@ -7,7 +7,7 @@ end
   end
   
   Então("sou autenticado com sucesso") do
-       
+    expect(@tarefas_page.msg_bem_vindo)
   end
   
   Então("sou redirecionado para o painel de tarefas com a mensagem {string}") do |string|
