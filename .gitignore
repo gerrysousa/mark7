@@ -2,3 +2,4 @@ Gemfile.lock
 log/reports.html
 log/mongo.log
 log/screenshots/
+debug.log

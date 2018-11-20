@@ -3,21 +3,15 @@
 class Navbar
     include Capybara::DSL
   
-    # def menu_usuario
-    #   within('.navbar') do
-    #     return find('#userMenu')
-    #   end
-    # end
+    def menu_usuario
+        find('.profile-address')
+    end
   
-    # def vai_para_anuncio
-    #   click_link'Vender meu Carro';
-    # end
-  
-    # def sair
-    #   menu_usuario.click
-    #   click_link 'Sair'
-    # end
-  end
+    def sair
+       menu_usuario.click
+       click_link 'logout'
+    end
+end
   
   class SweetAlert
     include Capybara::DSL

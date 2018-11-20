@@ -12,4 +12,12 @@ After do |scenario|
   screenshot = "log/screenshots/#{nome_cenario}.png"
   page.save_screenshot(screenshot) # => capybara tira o screenshot
   embed(screenshot, 'image/png', 'Evidência') # => cucumber atacha a evidencia no relatório
+
+  tem = page.has_css?('.profile-address')
+
+  if tem
+    visit '/logout'
+   sleep 3
+  end  
+
 end

@@ -16,7 +16,7 @@ Funcionalidade: Login
         Então sou autenticado com sucesso
         E sou redirecionado para o painel de tarefas com a mensagem "Olá, Fernando"
     
-    @smoke1
+    @smoke
     Esquema do Cenário: Tentativa de logar
 
         Quando faço login com "<email>" e "<senha>"
