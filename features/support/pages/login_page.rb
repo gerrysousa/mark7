@@ -8,7 +8,7 @@ class LoginPage
     end
   
     def alerta
-        find('.alert-login')
+        find('.alert-login').text()
       end
 
     def acessar

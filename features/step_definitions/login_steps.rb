@@ -7,9 +7,8 @@ end
   end
   
   Então("sou autenticado com sucesso") do
-    
-   
-   end
+       
+  end
   
   Então("sou redirecionado para o painel de tarefas com a mensagem {string}") do |string|
     expect(@tarefas_page.msg_bem_vindo).to eql string
@@ -17,7 +16,7 @@ end
   
   Então("devo ver a mensagem de alerta {string}") do |string|
     #Então("devo ver a seguinte mensagem de {string}") do |mensagem_alerta|
-      expect(@login_page.msg_alerta).to eql string
+      expect(@login_page.alerta).to eql string
     #end
   end
 
