@@ -7,14 +7,12 @@ class LoginPage
       click_button 'Login'
     end
   
-    def msg_alerta
-      within('form[id=login_form]') do
-        return find('.alert').text
+    def alerta
+        find('.alert-login')
       end
-    end
 
     def acessar
-        visit '/'
+        visit '/login'
       end
   end
   
