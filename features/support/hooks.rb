@@ -13,8 +13,9 @@ After do |scenario|
   page.save_screenshot(screenshot) # => capybara tira o screenshot
   embed(screenshot, 'image/png', 'Evidência') # => cucumber atacha a evidencia no relatório
 
-  tem = page.has_css?('.profile-address')
+  tem = page.has_selector?('.profile-address')
 
+  puts tem
   if tem
     visit '/logout'
    sleep 3
