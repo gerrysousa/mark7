@@ -21,10 +21,21 @@ Extensões para instalar pelo VS code
 - (Opcional) Atom one dark theme
 
 Criado o projeto >>>
+Coloque no arquivo Gemfile todas as gems que serão necessarias no projeto, o comanto "bundle install"  instala todas de um vez
 Depois que criar o arquivo gemfiles, executar o comando abaixo para instalar as gems
 *bundle install
 
+Para criar a estrutura do cucumber executar o comando:
+´´´cucumber --init´´´
 
+o comando acima cria as pastas
+create   features
+  create   features/step_definitions
+  create   features/support
+  create   features/support/env.rb
+
+
+-----
 Lembretes para pesquisar elemento no css
 - quando for pesquisar por classe
 $('.classe-name').text()
