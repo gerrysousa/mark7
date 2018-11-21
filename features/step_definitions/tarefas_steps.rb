@@ -26,15 +26,13 @@ Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
     @nova_tarefa_page.confirma_cadastro
   end
   
-  Então("devo ver está tarefa com o status {string}") do |string|
-    resposta = @tarefas_page.obter_status_tarefa(@nova_tarefa[:nome])
-    puts resposta
-    # linha = @page.tarefas.obter_tr_por_nome(@nova_tarefa[:nome])
+  Então("devo ver está tarefa com o status {string}") do |status_tarefa|
+    resposta = @tarefas_page.obter_status_tarefa(@tarefa[:nome])
     expect(resposta).to have_content status_tarefa
   end
   
   Então("devo ver somente {int} tarefa com o nome cadastrado") do |int|
-    pending # Write code here that turns the phrase above into concrete actions
+  
   end  
   
   Então("devo ver a mensagem {string} ao tentar cadastrar") do |string|
