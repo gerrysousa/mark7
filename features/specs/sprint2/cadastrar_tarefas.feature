@@ -5,7 +5,7 @@ Funcionalidade: Cadastrar tarefas
     Para que eu possa organizar minhas atividades
     Sendo um usuário cadastrado
     Posso cadastrar novas tarefas
-
+    @login @teste
     Cenario: Nova tarefa
 
         Dado que eu tenho uma tarefa com os seguintes atributos:

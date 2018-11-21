@@ -2,8 +2,14 @@ Before do
   @login_page = LoginPage.new
   @navbar = Navbar.new
   @tarefas_page = TarefasPage.new
+  @nova_tarefa_page = NovaTarefaPage.new
 
   page.current_window.resize_to(1440, 900)
+end
+
+Before('@login') do
+  @login_page.acessar
+  @login_page.faz_login('eu@papito.io','123456')
 end
 
 After do |scenario|

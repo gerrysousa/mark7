@@ -12,3 +12,6 @@ $('.classe-name').text()
 
 - quando for por id
 $('#id_elemento_nome').text()
+
+- quando form por placeholder
+$('input[placeholder=Email]').

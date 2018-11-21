@@ -7,8 +7,16 @@ class NovaTarefaPage
         find('#dueDate').set data       
     end
     
-    def colocar_tag_na_tarefa(tag)
-         find('.input-div col-sm-9').set tag
+    def colocar_tag_na_tarefa(tags)
+        within('div[class*=tagsinput]') do
+            input_tag = find('input[type=text]')
+            tags.each do |t|
+                input_tag.set t[:tag]
+                input_tag.send_keys :tab
+                sleep 0.5
+            end
+        end
+   
         click_button 'Cadastrar'
         #form-submit-button     id do botao cadastrar
     end
@@ -20,7 +28,7 @@ class NovaTarefaPage
       
   
     def acessar
-        visit '/insert'
+        visit '/tasks/insert'
     end
 
 end
