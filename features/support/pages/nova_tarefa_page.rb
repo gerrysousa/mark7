@@ -16,9 +16,6 @@ class NovaTarefaPage
                 sleep 0.5
             end
         end
-   
-        click_button 'Cadastrar'
-        #form-submit-button     id do botao cadastrar
     end
 
     def confirma_cadastro()

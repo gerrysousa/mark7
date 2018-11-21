@@ -7,6 +7,13 @@ class TarefasPage
         find('.alert-login')
     end
 
+    def obter_status_tarefa(nome)
+        find('table tbody tr', text: nome)
+    end
+
+    
+
+
     def msg_bem_vindo
         find('#task-board h3').text()
     end
