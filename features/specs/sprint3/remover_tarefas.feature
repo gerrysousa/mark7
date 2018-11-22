@@ -20,8 +20,8 @@ Funcionalidade: Remover uma tarefa
     Cenario: Desistir da remoção
 
         Dado que tenho uma tarefa indesejada
-            | nome | Tarefa Indesejada |
-            | data | 25/06/2018    |
+            | nome | Tarefa Desejada |
+            | data | 25/06/2018      |
         Quando eu solicito a exclusão desta tarefa
         Mas eu cancelo esta ação
         Então esta tarefa permanece na lista
