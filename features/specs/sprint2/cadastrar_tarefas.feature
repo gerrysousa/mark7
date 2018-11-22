@@ -6,7 +6,7 @@ Funcionalidade: Cadastrar tarefas
     Sendo um usuário cadastrado
     Posso cadastrar novas tarefas
 
-    @login @teste
+    @login 
     Cenario: Nova tarefa
 
         Dado que eu tenho uma tarefa com os seguintes atributos:
@@ -20,7 +20,7 @@ Funcionalidade: Cadastrar tarefas
         Quando faço o cadastro dessa tarefa
         Então devo ver está tarefa com o status "Em andamento"
 
-    @login @teste
+    @login 
     Cenario: Tarefa não pode ser duplicada
 
         Dado que eu tenho uma tarefa com os seguintes atributos:
@@ -37,7 +37,7 @@ Funcionalidade: Cadastrar tarefas
         Então devo ver a mensagem "Tarefa duplicada." ao tentar cadastrar
         E devo ver somente 1 tarefa com o nome cadastrado
 
-    @login @teste
+    @login 
     Cenario: Valor mínimo
 
         Dado que eu tenho uma tarefa com os seguintes atributos:

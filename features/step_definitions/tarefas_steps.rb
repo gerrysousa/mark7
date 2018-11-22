@@ -46,4 +46,31 @@ Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
     expect(@nova_tarefa_page.alerta).to have_content tarefa_duplicada
   end
   
+  Dado("que tenho uma tarefa indesejada") do |table|
+    @tarefaAux = table.rows_hash
+    @tarefa = { nome: @tarefaAux[:nome], data: @tarefaAux[:data], tags: [] }
+    @dao.remover_tarefas(@tarefa[:nome])
+    steps %{Quando faço o cadastro dessa tarefa}
+  end
   
+  Quando("eu solicito a exclusão desta tarefa") do
+    @tarefas_page.btn_remover_tarefa(@tarefa[:nome])
+  end
+  
+  Quando("confirmo a ação de exclusão") do
+    @tarefas_page.btn_alerta_confirmar
+  end
+  
+  Então("esta tarefa não deve ser exibida na lista") do
+    achou = @tarefas_page.procura_tarefa(@tarefa[:nome])
+    expect(achou).to be false
+  end
+  
+  Quando("eu cancelo esta ação") do
+    @tarefas_page.btn_alerta_cancelar
+  end
+  
+  Então("esta tarefa permanece na lista") do
+    achou = @tarefas_page.procura_tarefa(@tarefa[:nome])
+    expect(achou).to be true
+  end
