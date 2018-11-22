@@ -1,6 +1,6 @@
-Dado("que eu acessei o formulário de login") do
-  @login_page.acessar
-end
+  Dado("que eu acessei o formulário de login") do
+    @login_page.acessar
+  end
   
   Quando("faço login com {string} e {string}") do |string, string2|
     @login_page.faz_login(string, string2)
@@ -15,9 +15,7 @@ end
   end
   
   Então("devo ver a mensagem de alerta {string}") do |string|
-    #Então("devo ver a seguinte mensagem de {string}") do |mensagem_alerta|
       expect(@login_page.alerta).to eql string
-    #end
   end
 
 

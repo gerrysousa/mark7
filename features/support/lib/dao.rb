@@ -19,7 +19,4 @@ class DAO
     tasks = @client[:tasks]
     tasks.find('title' => nome)
   end
-
-  
-
 end

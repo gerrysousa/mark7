@@ -24,19 +24,3 @@ end
       click_button 'OK'
     end
   end
-
-  class Modal
-    include Capybara::DSL
-  
-    def btn_confirmar
-      within('.modal-content') do
-        click_button 'Sim'
-      end
-    end
-  
-    def cancelar
-      within('.modal-content') do
-        click_button 'Não, deixa queto.'
-      end
-    end
-  end

@@ -1,6 +1,5 @@
 class NovaTarefaPage
-    include Capybara::DSL
-  
+    include Capybara::DSL  
       
     def cadastrar_tarefa(tarefa)
 
@@ -24,13 +23,10 @@ class NovaTarefaPage
 
     def confirma_cadastro()
         click_button 'Cadastrar'
-       #form-submit-button     id do botao cadastrar
     end
-      
   
     def alerta()
         find('.col-md-12').text()
-       #form-submit-button     id do botao cadastrar
     end
 
     def acessar

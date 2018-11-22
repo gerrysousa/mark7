@@ -1,11 +1,8 @@
-Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
-  sleep 3
+  Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
+    sleep 3
     @tarefaAux = table.rows_hash
     @tarefa = { nome: @tarefaAux[:nome], data: @tarefaAux[:data], tags: [] }
     @dao.remover_tarefas(@tarefa[:nome])
-    # puts " tarefa"
-    # puts @tarefa @nova_tarefa[:tags] = table.hashes
-   
   end
   
   Dado("eu quero taguear esta tarefa com:") do |table|
@@ -13,7 +10,6 @@ Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
     puts @tags
     puts "nome todo dado"
     @tarefa = { nome: @tarefaAux[:nome], data: @tarefaAux[:data], tags: @tags }
-
   end
   
   Dado("eu já cadastrei esta tarefa e não tinha percebido") do
@@ -27,7 +23,7 @@ Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
     @tarefas_page.add_tarefa
     @nova_tarefa_page.cadastrar_tarefa(@tarefa)  
     #@nova_tarefa_page.colocar_tag_na_tarefa(@tags)  
-   # @nova_tarefa_page.confirma_cadastro()
+    #@nova_tarefa_page.confirma_cadastro()
   end
   
   Então("devo ver está tarefa com o status {string}") do |status_tarefa|
@@ -41,8 +37,6 @@ Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
   end  
   
   Então("devo ver a mensagem {string} ao tentar cadastrar") do |tarefa_duplicada|
-    puts('dentro do metodo - devo ver a mensagem ')
-    # puts @nova_tarefa_page.alerta.text()
     expect(@nova_tarefa_page.alerta).to have_content tarefa_duplicada
   end
   

@@ -1,7 +1,6 @@
 
 class TarefasPage
-    include Capybara::DSL
-  
+    include Capybara::DSL  
       
     def alerta
         find('.alert-login')
@@ -13,8 +12,7 @@ class TarefasPage
 
     def add_tarefa
         find('#insert-button').click()
-    end
-    
+    end    
 
     def msg_bem_vindo
         find('#task-board h3').text()
@@ -31,11 +29,11 @@ class TarefasPage
         end
     end
     
-      def btn_alerta_cancelar
+    def btn_alerta_cancelar
         within('.modal-content') do
-          click_button 'Não, deixa queto.'
+            click_button 'Não, deixa queto.'
         end
-      end
+    end
 
     def procura_tarefa(nome)
         sleep 2
