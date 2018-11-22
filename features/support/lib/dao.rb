@@ -14,4 +14,12 @@ class DAO
     tasks = @client[:tasks]
     tasks.delete_many('title' => nome)
   end
+
+  def busca_por_nome(nome)
+    tasks = @client[:tasks]
+    tasks.find('title' => nome)
+  end
+
+  
+
 end

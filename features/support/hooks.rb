@@ -3,6 +3,7 @@ Before do
   @navbar = Navbar.new
   @tarefas_page = TarefasPage.new
   @nova_tarefa_page = NovaTarefaPage.new
+  @dao = DAO.new
 
   page.current_window.resize_to(1440, 900)
 end

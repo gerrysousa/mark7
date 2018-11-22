@@ -2,6 +2,7 @@ Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
   sleep 4
     # @nova_tarefa_page.acessar
     @tarefa = table.rows_hash
+    @dao.remover_tarefas(@tarefa[:nome])
     # puts " tarefa"
     # puts @tarefa
    
@@ -38,7 +39,8 @@ Dado("que eu tenho uma tarefa com os seguintes atributos:") do |table|
   end
   
   Então("devo ver somente {int} tarefa com o nome cadastrado") do |quantidade|
-  
+    res =  @dao.busca_por_nome(@tarefa[:nome])
+    expect(res.count).to eql quantidade
   end  
   
   Então("devo ver a mensagem {string} ao tentar cadastrar") do |tarefa_duplicada|
