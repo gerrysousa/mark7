@@ -4,7 +4,9 @@ class NovaTarefaPage
       
     def cadastrar_tarefa(nome, data)
         find('#title').set nome
-        find('#dueDate').set data       
+        find('#dueDate').set data    
+        
+       
     end
     
     def colocar_tag_na_tarefa(tags)
@@ -21,9 +23,14 @@ class NovaTarefaPage
     def confirma_cadastro()
         click_button 'Cadastrar'
        #form-submit-button     id do botao cadastrar
-   end
+    end
       
   
+    def alerta()
+        find('.col-md-12').text()
+       #form-submit-button     id do botao cadastrar
+    end
+
     def acessar
         visit '/tasks/insert'
     end

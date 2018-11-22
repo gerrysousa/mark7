@@ -5,7 +5,8 @@ Funcionalidade: Cadastrar tarefas
     Para que eu possa organizar minhas atividades
     Sendo um usuário cadastrado
     Posso cadastrar novas tarefas
-    @login @teste
+
+    @login @teste1
     Cenario: Nova tarefa
 
         Dado que eu tenho uma tarefa com os seguintes atributos:
@@ -18,8 +19,8 @@ Funcionalidade: Cadastrar tarefas
             | compras      |
         Quando faço o cadastro dessa tarefa
         Então devo ver está tarefa com o status "Em andamento"
-        E devo ver somente 1 tarefa com o nome cadastrado
 
+    @login @teste
     Cenario: Tarefa não pode ser duplicada
 
         Dado que eu tenho uma tarefa com os seguintes atributos:

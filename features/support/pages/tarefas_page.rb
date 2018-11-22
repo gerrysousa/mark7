@@ -11,8 +11,10 @@ class TarefasPage
         find('table tbody tr', text: nome)
     end
 
+    def add_tarefa
+        find('#insert-button').click()
+    end
     
-
 
     def msg_bem_vindo
         find('#task-board h3').text()
