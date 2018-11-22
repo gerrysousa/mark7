@@ -6,7 +6,7 @@ Funcionalidade: Cadastrar tarefas
     Sendo um usuário cadastrado
     Posso cadastrar novas tarefas
 
-    @login @teste1
+    @login @teste
     Cenario: Nova tarefa
 
         Dado que eu tenho uma tarefa com os seguintes atributos:
@@ -37,12 +37,13 @@ Funcionalidade: Cadastrar tarefas
         Então devo ver a mensagem "Tarefa duplicada." ao tentar cadastrar
         E devo ver somente 1 tarefa com o nome cadastrado
 
+    @login @teste
     Cenario: Valor mínimo
 
-        Dado que eu tenho uma tarefa com o seguintes atributos:
+        Dado que eu tenho uma tarefa com os seguintes atributos:
             | nome | Mongo      |
             | data | 25/06/2018 |
         Quando faço o cadastro dessa tarefa
-        Então devo ver a mensagem "O nome da tarefa deve ter no minimo 10 caracteres" ao tentar cadastrar
+        Então devo ver a mensagem "10 caracteres é o mínimo permitido." ao tentar cadastrar
 
 

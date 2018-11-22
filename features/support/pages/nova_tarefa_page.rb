@@ -2,11 +2,13 @@ class NovaTarefaPage
     include Capybara::DSL
   
       
-    def cadastrar_tarefa(nome, data)
-        find('#title').set nome
-        find('#dueDate').set data    
-        
+    def cadastrar_tarefa(tarefa)
+
+        find('#title').set tarefa[:nome]
+        find('#dueDate').set tarefa[:data]   
+        colocar_tag_na_tarefa(tarefa[:tags])
        
+        confirma_cadastro()
     end
     
     def colocar_tag_na_tarefa(tags)
