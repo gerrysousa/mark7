@@ -45,3 +45,10 @@ $('#id_elemento_nome').text()
 
 - quando form por placeholder
 $('input[placeholder=Email]').
+
+
+
+Comando
+cucumber (rodar todos os testes)
+cucumber -t @tag_name (rodar apenas os testes com a tag "tag_name")
+cucumber --format html --out=log/reports.html (rodar os testes e gerar o arquivo reports html)

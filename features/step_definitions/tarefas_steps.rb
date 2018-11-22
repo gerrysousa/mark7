@@ -7,16 +7,12 @@
   
   Dado("eu quero taguear esta tarefa com:") do |table|
     @tags= table.hashes
-    puts @tags
-    puts "nome todo dado"
     @tarefa = { nome: @tarefaAux[:nome], data: @tarefaAux[:data], tags: @tags }
   end
   
   Dado("eu já cadastrei esta tarefa e não tinha percebido") do
-    puts "entrado dentro do mas ja cadas"
     steps %{Quando faço o cadastro dessa tarefa}
     sleep 2
-    puts "saindo dentro do mas ja cadas"
   end
 
   Quando("faço o cadastro dessa tarefa") do
@@ -32,8 +28,8 @@
   end
   
   Então("devo ver somente {int} tarefa com o nome cadastrado") do |quantidade|
-    res =  @dao.busca_por_nome(@tarefa[:nome])
-    expect(res.count).to eql quantidade
+    resposta =  @dao.busca_por_nome(@tarefa[:nome])
+    expect(resposta.count).to eql quantidade
   end  
   
   Então("devo ver a mensagem {string} ao tentar cadastrar") do |tarefa_duplicada|
