@@ -1,5 +1,5 @@
 ---
-default: -p chrome #-p dot -p html 
+default: -p chrome -p dot -p html 
 ci: -p headless -p dot -p json
 html: --format html --out=log/reports.html
 json: --format json --out=log/reports.json
