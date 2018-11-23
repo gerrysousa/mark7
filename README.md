@@ -34,8 +34,66 @@ create   features
   create   features/support
   create   features/support/env.rb
 
-
+  
+  Depois disso o podemos desenvolver o projeto e  executar o comando "cucumber" para rodar os testes.
 -----
+Setup para colocar os testes no jenkins
+
+- Instalar o Docker (https://store.docker.com/search?type=edition&offering=community).
+(verifique a versão dodocker --version)
+
+Depois que o docker estiver instalado, vamos instalar o Jenkins:
+- Instalar o Jenkins (https://jenkins.io/doc/book/installing/)
+Para instalar o jenkins basta colar os seguintes comandos no terminal
+-----
+docker run ^
+  -u root ^
+  --rm ^
+  -d ^
+  -p 8080:8080 ^
+  -p 50000:50000 ^
+  -v jenkins-data:/var/jenkins_home ^
+  -v /var/run/docker.sock:/var/run/docker.sock ^
+  jenkinsci/blueocean
+-----
+
+- docker ps (Lista as imagens do docker executando)
+- docker rename 11111111 novo_nome
+
+o jenkins vai estar disponivel na porta abaixo:
+http://localhost:8080/
+
+Porem é necesario a senha de admin acessando o container do jenkins
+
+#Acessar o container (jenkins=nome do container)
+docker exec -i -t jenkins sh
+
+#Pegando a chave no arquivo comando "cat"
+cat /var/jenkins_home/secrets/initialAdminPassword
+
+Pegar a chave e colar no portal
+http://localhost:8080/
+
+- Instalar plugins sugeridos
+
+Também é necesario um container com o selenium
+
+#Criando novo container para a maquina dos testes com o selenium 
+docker run -d -p 4444:4444 -p 59000:59000 selenium/standalone-chrome-debug
+
+
+
+
+
+
+
+Comandos uteis docker:
+- docker ps (Lista as imagens do docker executando)
+- docker rename 11111111 novo_nome
+
+
+
+
 Lembretes para pesquisar elemento no css
 - quando for pesquisar por classe
 $('.classe-name').text()

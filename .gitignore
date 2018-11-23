@@ -4,3 +4,4 @@ log/mongo.log
 log/screenshots/
 debug.log
 *.orig
+log/reports.json
